@@ -11,12 +11,13 @@
             background-color: #f2f2f2;
             color: #222;
         }
+
         /* Navigation */
         nav {
             background-color: #17243a;
             padding: 20px;
             text-align: center;
-            position: relative; /* keeps it above the hero */
+            position: relative;
             z-index: 10;
         }
         nav a {
@@ -25,6 +26,7 @@
             margin: 0 20px;
             font-weight: bold;
         }
+
         /* Hero section */
         .hero {
             height: 500px;
@@ -34,7 +36,7 @@
             align-items: center;
             color: white;
             text-align: center;
-            overflow: hidden; /* prevents any overflow */
+            overflow: hidden;
         }
         .hero-content {
             max-width: 100%;
@@ -46,7 +48,7 @@
         }
         .hero img {
             max-width: 90%;
-            max-height: 400px; /* leaves room for the text below */
+            max-height: 400px;
             width: auto;
             height: auto;
             object-fit: contain;
@@ -56,22 +58,78 @@
             font-size: 20px;
             margin: 15px 0 0 0;
         }
+
         /* Main Content */
         .content {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 20px;
-            text-align: center;
         }
-        .section {
-            background-color: white;
-            padding: 30px;
+
+        .section-title {
+            text-align: center;
             margin-bottom: 30px;
-            border-radius: 8px;
+            color: #17243a;
+        }
+
+        /* Expandable Division Bars */
+        details {
+            background-color: #17243a;
+            color: white;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        details[open] {
+            background-color: #1e2f4a;
+        }
+
+        summary {
+            padding: 18px 22px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        /* Remove default arrow */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Custom arrow */
+        summary::after {
+            content: "+";
+            font-size: 22px;
+            font-weight: normal;
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::after {
+            content: "−";
+        }
+
+        .details-content {
+            padding: 0 22px 20px 22px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #e0e0e0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        summary:hover {
+            background-color: #1e2f4a;
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav>
         <a href="index.html">HOME</a>
@@ -80,6 +138,7 @@
         <a href="command.html">COMMAND</a>
         <a href="recruitment.html">RECRUITMENT</a>
     </nav>
+
     <!-- Homepage Image -->
     <section class="hero">
         <div class="hero-content">
@@ -87,24 +146,52 @@
             <p>San Andreas Sheriff's Office</p>
         </div>
     </section>
-    <!-- Main Homepage Content -->
+
+    <!-- Expandable Divisions -->
     <main class="content">
-        <section class="section">
-            <h2>San Andreas Sheriff's Office</h2>
-            <p>
-                
-            </p>
-        </section>
-        <section class="section">
-            <h2>Our Mission</h2>
-            <p>
-           
-            </p> 
+        <h2 class="section-title">Our Divisions</h2>
 
-            <p>
+        <!-- Division 1 -->
+        <details>
+            <summary>Insert name</summary>
+            <div class="details-content">
+                Insert details
+            </div>
+        </details>
 
-            </p>
-        </section>
+        <!-- Division 2 -->
+        <details>
+            <summary>Insert name</summary>
+            <div class="details-content">
+                Insert details
+            </div>
+        </details>
+
+        <!-- Division 3 -->
+        <details>
+            <summary>Insert name</summary>
+            <div class="details-content">
+                Insert details
+            </div>
+        </details>
+
+        <!-- Division 4 -->
+        <details>
+            <summary>Insert name</summary>
+            <div class="details-content">
+                Insert details
+            </div>
+        </details>
+
+        <!-- Division 5 -->
+        <details>
+            <summary>Insert name</summary>
+            <div class="details-content">
+                Insert details
+            </div>
+        </details>
+
     </main>
+
 </body>
 </html>
